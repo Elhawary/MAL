@@ -57,7 +57,6 @@ public class MyFavoritFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Add this line in order for this fragment to handle menu events.
         setHasOptionsMenu(true);
     }
     public  void checkTablet(DetailMovieFragment fr){
@@ -78,7 +77,7 @@ public class MyFavoritFragment extends Fragment{
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.check , container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main , container, false);
 
         final Intent intent = new Intent(getActivity(), DetailActivity.class);
         gridview = (GridView) rootView.findViewById(R.id.grid);
@@ -117,9 +116,6 @@ public class MyFavoritFragment extends Fragment{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         return super.onOptionsItemSelected(item);
     }

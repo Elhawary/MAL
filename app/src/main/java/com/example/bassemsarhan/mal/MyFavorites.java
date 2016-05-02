@@ -32,16 +32,13 @@ public class MyFavorites extends AppCompatActivity {
                 = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
-
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.myfavorite);
-
-        final MyFavoritFragment obj = (MyFavoritFragment) getSupportFragmentManager().findFragmentById(R.id.frg1);
-        DetailMovieFragment fr = (DetailMovieFragment)getSupportFragmentManager().findFragmentById(R.id.frg2);
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.myfavorite);
+         MyFavoritFragment obj = (MyFavoritFragment) getSupportFragmentManager().findFragmentById(R.id.frg1);
+         DetailMovieFragment fr = (DetailMovieFragment)getSupportFragmentManager().findFragmentById(R.id.frg2);
             obj.checkTablet(fr);
 
     }
@@ -50,7 +47,6 @@ public class MyFavorites extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
